@@ -1,6 +1,6 @@
 -- Create the database
-CREATE DATABASE IF NOT EXISTS UniversityManagement;
-USE UniversityManagement;
+CREATE DATABASE IF NOT EXISTS FraudDetectionDatabase;
+
 
 -- Create the Account table
 CREATE TABLE Account (
