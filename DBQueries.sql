@@ -1,5 +1,6 @@
 -- Create the database
 CREATE DATABASE IF NOT EXISTS FraudDetectionDatabase;
+USE FraudDetectionDatabase;
 
 
 -- Create the Account table
@@ -10,6 +11,7 @@ CREATE TABLE Account (
     Currency VARCHAR(50) NOT NULL,
     accountStatus VARCHAR(50) NOT NULL,
     UserType VARCHAR(100) NOT NULL UNIQUE,
+    EntityID INT,
     FOREIGN KEY (EntityID) REFERENCES EntityType(EntityID) NOT NULL 
 );
 
@@ -20,7 +22,8 @@ CREATE TABLE EntityType (
 
 CREATE TABLE Passwords (
     PasswordID INT PRIMARY KEY,
-    FOREIGN KEY (AccountID) REFERENCES  INT
+    AccountID INT,
+    FOREIGN KEY (AccountID) REFERENCES Account(AccountID) NOT NULL
     DateIssued DATE 
 );
 
